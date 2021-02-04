@@ -29,7 +29,7 @@ seen_names = set()
 
 
 class Loader:
-    def __init__(self, save_on_every_write: bool = True, file_name: str = None, serializer_args: Dict[str, Any] = None, *args, **kwargs):
+    def __init__(self, save_on_every_write: bool = False, file_name: str = None, serializer_args: Dict[str, Any] = None, *args, **kwargs):
         if not os.path.exists(".pickledict"):
             os.mkdir(".pickledict")
         if file_name is None:
@@ -51,6 +51,7 @@ class Loader:
 
         if not self.save_on_every_write:
             def exit_save():
+
                 self.serialize()
 
             atexit.register(exit_save)

@@ -1,6 +1,6 @@
 # pickledict
 
-`pickledict`/`jsondict` and `picklelist`/`jsonlist` are auto-saving wrappers around their contained types. Their API is the same as the underlying type, `dict` or `list`, but writes are recorded to a file.
+`pickledict`/`jsondict` and `picklelist`/`jsonlist` are auto-saving wrappers around their contained types. Their API is the same as the underlying type, `dict` or `list`, but writes are recorded to a file and are transparently re-loaded on subsequent runs.
 
 ```python
 from pickledict import jsondict
